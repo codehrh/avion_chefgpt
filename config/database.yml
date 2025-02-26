@@ -79,7 +79,6 @@ test:
 # for a full overview on how database connection configuration can be specified.
 #
 production:
-  <<: *default
-  database: chefgpt_production
-  username: chefgpt
-  password: <%= ENV["CHEFGPT_DATABASE_PASSWORD"] %>
+  adapter: postgresql
+  url: <%= ENV["DATABASE_URL"] %>
+  pool: 5
